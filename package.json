@@ -1,0 +1,25 @@
+{
+  "name": "y",
+  "version": "0.0.1",
+  "description": "Component based layout and spacing utilities for rendering UI with react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeyamadeo/react-ditto.git"
+  },
+  "keywords": [
+    "react",
+    "trumps",
+    "utility",
+    "layout"
+  ],
+  "author": "Mikey Murphy <mikeyamadeo@gmail.com> (https://twitter.com/TranscendMikey)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikeyamadeo/react-ditto/issues"
+  },
+  "homepage": "https://github.com/mikeyamadeo/react-ditto#readme"
+}
