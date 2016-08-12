@@ -1,5 +1,6 @@
 # react-ditto
 Component layout and spacing utilities for rendering UI with react
+![ditto](http://pokemonleedle.weebly.com/uploads/2/7/9/5/27952027/3465339_orig.gif)
 
 Placeholder for publishing module that will do the following
 
