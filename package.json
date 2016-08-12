@@ -1,10 +1,13 @@
 {
-  "name": "y",
+  "name": "mikeyamadeo",
   "version": "0.0.1",
   "description": "Component based layout and spacing utilities for rendering UI with react",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel --copy-files --out-dir dist src",
+    "prebuild": "rimraf dist",
+    "test": "ava -w",
+    "examples": "webpack-dev-server --inline --content-base examples"
   },
   "repository": {
     "type": "git",
@@ -21,5 +24,44 @@
   "bugs": {
     "url": "https://github.com/mikeyamadeo/react-ditto/issues"
   },
-  "homepage": "https://github.com/mikeyamadeo/react-ditto#readme"
+  "homepage": "https://github.com/mikeyamadeo/react-ditto#readme",
+  "dependencies": {
+    "react": "15.1.0"
+  },
+  "devDependencies": {
+    "ava": "0.15.2",
+    "babel-cli": "6.10.1",
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-react": "6.5.0",
+    "babel-preset-stage-2": "6.5.0",
+    "react-dom": "15.1.0",
+    "rimraf": "2.5.2",
+    "webpack": "1.13.1",
+    "webpack-dev-server": "1.14.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2",
+      "react"
+    ]
+  },
+  "ava": {
+    "files": [
+      "**/spec.js",
+      "**/*.spec.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "standard": {
+    "showEslintRules": true,
+    "parser": "babel-eslint",
+    "rules": {
+      "strict": 0
+    }
+  }
 }
