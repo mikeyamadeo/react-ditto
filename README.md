@@ -11,6 +11,7 @@ Let's say we want to render our pokemon go team:
 import React from 'react'
 import { render } from 'react-dom'
 import ___ from 'react-ditto'
+import { pokemon } from './examples/data'
 
 const HealthBar = ({percentHealth}) =>
   <__ width='100%' height='6px'>
