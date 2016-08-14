@@ -4,6 +4,7 @@ Transform layout to take whatever form you please without leaving the render met
 
 ## Quick Look
 Let's say we want to render this:
+
 ![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/PokemonListUI.png)
 
 ```jsx
