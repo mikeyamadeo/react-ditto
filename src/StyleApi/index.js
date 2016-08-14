@@ -18,7 +18,7 @@ const extractActiveStyleKeys = (props) =>
 
 const getStylesFromApi = (styleNames, api) => flatten(
   styleNames.map(
-    key => console.log(api, key, api[key]) || api[key]
+    key => api[key]
   )
 )
 
