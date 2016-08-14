@@ -2,6 +2,10 @@
 Transform layout to take whatever form you please without leaving the render method.
 ![ditto](http://pokemonleedle.weebly.com/uploads/2/7/9/5/27952027/3465339_orig.gif)
 
+## Quick Look
+Let's say we want to render this:
+![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/PokemonListUI.png)
+
 ```jsx
 import React from 'react'
 import { render } from 'react-dom'
