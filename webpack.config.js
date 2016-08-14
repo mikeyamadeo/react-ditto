@@ -17,6 +17,14 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loaders: ['babel-loader']
+      },
+      {
+        test: /\.png/,
+        loader: 'url-loader?limit=10000&mimetype=image/png'
+      },
+      {
+        test: /\.css/,
+        loaders: ['style-loader']
       }
     ]
   }
