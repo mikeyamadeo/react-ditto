@@ -91,7 +91,7 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-// align along y axis positioned across y axis placing space _around_ psyducks
+// align along y axis positioned across y axis placing space _around_ and wrapping as space requires
 const Psyducks = () =>
   <__ Y y spaceAround wrap>
    <img src='psyduck.png' />
