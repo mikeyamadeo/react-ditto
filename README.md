@@ -2,12 +2,12 @@
 Transform layout to take whatever form you please without leaving the render method.
 ![ditto](http://pokemonleedle.weebly.com/uploads/2/7/9/5/27952027/3465339_orig.gif)
 
-## Quick Look
-Let's learn by getting our Psyducks in a row:
+## Quick L👀ks
+Let's start by getting our Psyducks in a row:
 ```jsx
 import __ from 'react-ditto'
 
-// align psyducks horizontally (along X axis)
+// align psyducks along X axis
 const Psyducks = () =>
   <__ X>
    <img src='psyduck.png' />
@@ -21,7 +21,7 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-// position horizontally aligned psyducks in the center (across the Y axis)
+// align along x axis positioned across y axis
 const Psyducks = () =>
   <__ X y>
    <img src='psyduck.png' />
@@ -35,7 +35,7 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-// position horizontally aligned psyducks in the center (across the Y axis)
+// align along x axis position across both x & y axis
 const Psyducks = () =>
   <__ X x y>
    <img src='psyduck.png' />
@@ -49,7 +49,7 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-// 
+// align along x axis positioned across x axis placing space _between_ psyducks
 const Psyducks = () =>
   <__ X x spaceBetween>
    <img src='psyduck.png' />
@@ -63,7 +63,7 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-// 
+// align along x axis positioned across x axis placing space _around_ psyducks
 const Psyducks = () =>
   <__ X x spaceAround>
    <img src='psyduck.png' />
@@ -77,7 +77,7 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-//
+// align along y axis positioned across y axis placing space _around_ psyducks
 const Psyducks = () =>
   <__ Y y spaceAround>
    <img src='psyduck.png' />
@@ -88,6 +88,8 @@ const Psyducks = () =>
 ```
 ![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-column.jpg)
 
+
+![Pysducks-in-a-column](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-column-YyWrap.jpg)
 
 Let's say we want to render our pokemon go team:
 
