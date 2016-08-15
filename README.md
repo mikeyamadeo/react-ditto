@@ -2,10 +2,16 @@
 Transform layout to take whatever form you please without leaving the render method.
 ![ditto](http://pokemonleedle.weebly.com/uploads/2/7/9/5/27952027/3465339_orig.gif)
 
+## Quick Look
+Let's say we want to render our pokemon go team:
+
+![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/PokemonListUI.png)
+
 ```jsx
 import React from 'react'
 import { render } from 'react-dom'
 import ___ from 'react-ditto'
+import { pokemon } from './examples/data'
 
 const HealthBar = ({percentHealth}) =>
   <__ width='100%' height='6px'>
