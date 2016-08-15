@@ -3,6 +3,92 @@ Transform layout to take whatever form you please without leaving the render met
 ![ditto](http://pokemonleedle.weebly.com/uploads/2/7/9/5/27952027/3465339_orig.gif)
 
 ## Quick Look
+Let's learn by getting our Psyducks in a row:
+```jsx
+import __ from 'react-ditto'
+
+// align psyducks horizontally (along X axis)
+const Psyducks = () =>
+  <__ X>
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+  </__>
+```
+![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg)
+
+```jsx
+import __ from 'react-ditto'
+
+// position horizontally aligned psyducks in the center (across the Y axis)
+const Psyducks = () =>
+  <__ X y>
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+  </__>
+```
+![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-Xy.jpg)
+
+```jsx
+import __ from 'react-ditto'
+
+// position horizontally aligned psyducks in the center (across the Y axis)
+const Psyducks = () =>
+  <__ X x y>
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+  </__>
+```
+![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-Xxy.jpg)
+
+```jsx
+import __ from 'react-ditto'
+
+// 
+const Psyducks = () =>
+  <__ X x spaceBetween>
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+  </__>
+```
+![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-XxySpaceBetween.jpg)
+
+```jsx
+import __ from 'react-ditto'
+
+// 
+const Psyducks = () =>
+  <__ X x spaceAround>
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+  </__>
+```
+![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-XxySpaceAround.jpg)
+
+```jsx
+import __ from 'react-ditto'
+
+//
+const Psyducks = () =>
+  <__ Y y spaceAround>
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+  </__>
+```
+![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-column.jpg)
+
+
 Let's say we want to render our pokemon go team:
 
 ![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/PokemonListUI.png)
