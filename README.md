@@ -86,10 +86,22 @@ const Psyducks = () =>
    <img src='psyduck.png' />
   </__>
 ```
-![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-column.jpg)
+![psyducks-in-a-column](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-column.jpg)
 
+```jsx
+import __ from 'react-ditto'
 
-![Pysducks-in-a-column](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-column-YyWrap.jpg)
+// align along y axis positioned across y axis placing space _around_ psyducks
+const Psyducks = () =>
+  <__ Y y spaceAround wrap>
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+   <img src='psyduck.png' />
+  </__>
+```
+![Pysducks-in-a-column-wrap](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/psyducks-in-a-column-YyWrap.jpg)
+
 
 Let's say we want to render our pokemon go team:
 
