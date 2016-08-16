@@ -10,10 +10,7 @@ import __ from 'react-ditto'
 // align psyducks along X axis
 const Psyducks = () =>
   <__ X>
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
+    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
 ![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg)
@@ -24,10 +21,7 @@ import __ from 'react-ditto'
 // align along x axis positioned across y axis
 const Psyducks = () =>
   <__ X y>
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
+   <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
 ![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-Xy.jpg)
@@ -38,10 +32,7 @@ import __ from 'react-ditto'
 // align along x axis position across both x & y axis
 const Psyducks = () =>
   <__ X x y>
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
+   <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
 ![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-Xxy.jpg)
@@ -52,10 +43,7 @@ import __ from 'react-ditto'
 // align along x axis positioned across x axis placing space _between_ psyducks
 const Psyducks = () =>
   <__ X x spaceBetween>
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
+   <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
 ![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-XxySpaceBetween.jpg)
@@ -66,10 +54,7 @@ import __ from 'react-ditto'
 // align along x axis positioned across x axis placing space _around_ psyducks
 const Psyducks = () =>
   <__ X x spaceAround>
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
+   <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
 ![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-XxySpaceAround.jpg)
@@ -80,10 +65,7 @@ import __ from 'react-ditto'
 // align along y axis positioned across y axis placing space _around_ psyducks
 const Psyducks = () =>
   <__ Y y spaceAround>
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
+   <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
 ![psyducks-in-a-column](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-column.jpg)
@@ -94,15 +76,12 @@ import __ from 'react-ditto'
 // align along y axis positioned across y axis placing space _around_ and wrapping as space requires
 const Psyducks = () =>
   <__ Y y spaceAround wrap>
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
-   <img src='psyduck.png' />
+   <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
 ![Pysducks-in-a-column-wrap](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/psyducks-in-a-column-YyWrap.jpg)
 
-### Example set 1: Getting a flavor for the spacing api by helping Snorlax protect his candy
+### Example set 2: Getting a flavor for the spacing api by helping Snorlax protect his candy
 ![snorlax-candy-protection](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/snorlax-candy-protection-A.jpg)
 
 1. Let's get as far away from Haunter as we can by applying large left margin margin
@@ -116,9 +95,10 @@ const Psyducks = () =>
    <Candy />
   </__>
 ```
+
 ![snorlax-candy-protection](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/snorlax-candy-protection-B.jpg)
 
-2. Let's give Snorlax some breathing room from Zapdos and Sandslash by applying top and bottom padding
+2. Now let's give Snorlax some breathing room from Zapdos and Sandslash by applying top and bottom padding
 ```jsx
 import __ from 'react-ditto'
 
