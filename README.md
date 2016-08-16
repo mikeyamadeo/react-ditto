@@ -12,7 +12,7 @@ const Psyducks = () =>
     <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
-![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg)
+<img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='500px' />
 
 ```jsx
 import __ from 'react-ditto'
@@ -23,7 +23,8 @@ const Psyducks = () =>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
-![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-Xy.jpg)
+<img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-Xy.jpg' width='500px' />
+
 
 ```jsx
 import __ from 'react-ditto'
@@ -34,7 +35,8 @@ const Psyducks = () =>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
-![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-Xxy.jpg)
+<img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-Xxy.jpg' width='500px' />
+
 
 ```jsx
 import __ from 'react-ditto'
@@ -45,7 +47,7 @@ const Psyducks = () =>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
-![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-XxySpaceBetween.jpg)
+<img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-Xxy.jpg' width='500px' />
 
 ```jsx
 import __ from 'react-ditto'
@@ -56,7 +58,7 @@ const Psyducks = () =>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
-![PokemonListUI](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-XxySpaceAround.jpg)
+<img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-XxySpaceAround.jpg' width='500px' />
 
 ```jsx
 import __ from 'react-ditto'
@@ -67,7 +69,7 @@ const Psyducks = () =>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
-![psyducks-in-a-column](https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-column.jpg)
+<img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-column.jpg' width='500px' />
 
 ```jsx
 import __ from 'react-ditto'
@@ -78,10 +80,10 @@ const Psyducks = () =>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
-![Pysducks-in-a-column-wrap](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/psyducks-in-a-column-YyWrap.jpg)
+<img src='https://github.com/mikeyamadeo/react-ditto/blob/master/assets/psyducks-in-a-column-YyWrap.jpg' width='500px' />
 
 ### Example set 2: Getting a flavor for the spacing api by helping Snorlax protect his candy
-![snorlax-candy-protection](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/snorlax-candy-protection-A.jpg)
+<img src='https://github.com/mikeyamadeo/react-ditto/blob/master/assets/snorlax-candy-protection-A.jpg' width='500px' />
 
 1. Let's get as far away from Haunter as we can by applying large left margin margin
 ```jsx
@@ -94,8 +96,7 @@ const Psyducks = () =>
    <Candy />
   </__>
 ```
-
-![snorlax-candy-protection](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/snorlax-candy-protection-B.jpg)
+<img src='https://github.com/mikeyamadeo/react-ditto/blob/master/assets/snorlax-candy-protection-B.jpg' width='500px' />
 
 2. Now let's give Snorlax some breathing room from Zapdos and Sandslash by applying top and bottom padding
 ```jsx
@@ -108,6 +109,7 @@ const SnorlaxAndCandy = () =>
    <Candy />
   </__>
 ```
+<img src='https://github.com/mikeyamadeo/react-ditto/blob/master/assets/snorlax-candy-protection-C.jpg' width='500px' />
 
 3. Ever use the padding shorthand to apply it only vertically or horizonally (e.g. `padding: 10px 0`)? You can do similarly here. Let's apply this snorlax's vertical padding via shorthand:
 ```jsx
@@ -120,7 +122,6 @@ const SnorlaxAndCandy = () =>
    <Candy />
   </__>
 ```
-![snorlax-candy-protection](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/snorlax-candy-protection-C.jpg)
 
 This shorthand works for both margin and padding.
 
