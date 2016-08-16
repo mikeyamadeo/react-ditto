@@ -1,6 +1,5 @@
-# react-ditto
+# react-ditto <img src='https://camo.githubusercontent.com/4dcd7c4c933192970a8d86a9fac6634725891915/687474703a2f2f706f6b656d6f6e6c6565646c652e776565626c792e636f6d2f75706c6f6164732f322f372f392f352f32373935323032372f333436353333395f6f7269672e676966' width='80px' />
 Transform layout to take whatever form you please without leaving the render method.
-![ditto](http://pokemonleedle.weebly.com/uploads/2/7/9/5/27952027/3465339_orig.gif)
 
 ## Quick L👀ks
 ### Example set 1: Intro to layout or "axis" api by getting our Psyducks in a row
