@@ -3,7 +3,7 @@ Transform layout to take whatever form you please without leaving the render met
 ![ditto](http://pokemonleedle.weebly.com/uploads/2/7/9/5/27952027/3465339_orig.gif)
 
 ## Quick L👀ks
-Let's start by getting our Psyducks in a row:
+### Example set 1: Intro to layout or "axis" api by getting our Psyducks in a row
 ```jsx
 import __ from 'react-ditto'
 
@@ -102,6 +102,50 @@ const Psyducks = () =>
 ```
 ![Pysducks-in-a-column-wrap](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/psyducks-in-a-column-YyWrap.jpg)
 
+### Example set 1: Getting a flavor for the spacing api by helping Snorlax protect his candy
+![snorlax-candy-protection](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/snorlax-candy-protection-A.jpg)
+
+1. Let's get as far away from Haunter as we can by applying large left margin margin
+```jsx
+import __ from 'react-ditto'
+
+// apply size level 5 (largest on scale from 0-5) margin to the left
+const Psyducks = () =>
+  <__ ml5>
+   <Snorlax />
+   <Candy />
+  </__>
+```
+![snorlax-candy-protection](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/snorlax-candy-protection-B.jpg)
+
+2. Let's give Snorlax some breathing room from Zapdos and Sandslash by applying top and bottom padding
+```jsx
+import __ from 'react-ditto'
+
+// apply size level 3 (scale from 0-5) amount of padding to top (pt) and bottom (pb)
+const SnorlaxAndCandy = () =>
+  <__ X pt3 pb3>
+   <Snorlax />
+   <Candy />
+  </__>
+```
+
+3. Ever use the padding shorthand to apply it only vertically or horizonally (e.g. `padding: 10px 0`)? You can do similarly here. Let's apply this snorlax's vertical padding via shorthand:
+```jsx
+import __ from 'react-ditto'
+
+// apply padding along the 'y' axis
+const SnorlaxAndCandy = () =>
+  <__ X py3>
+   <Snorlax />
+   <Candy />
+  </__>
+```
+![snorlax-candy-protection](https://github.com/mikeyamadeo/react-ditto/blob/master/assets/snorlax-candy-protection-C.jpg)
+
+This shorthand works for both margin and padding.
+
+###Example set 3: Putting it all together
 
 Let's say we want to render our pokemon go team:
 
