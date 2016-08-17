@@ -52,7 +52,7 @@ const Psyducks = () =>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
-<img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-Xxy.jpg' width='500px' />
+<img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row-XxySpaceBetween.jpg' width='500px' />
 
 ```jsx
 import __ from 'react-ditto'
