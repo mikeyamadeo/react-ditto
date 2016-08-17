@@ -95,7 +95,7 @@ First, let's get as far away from Haunter as we can by applying large left margi
 import __ from 'react-ditto'
 
 // apply size level 5 (largest on scale from 0-5) margin to the left
-const Psyducks = () =>
+const SnorlaxAndCandy = () =>
   <__ ml5>
    <Snorlax />
    <Candy />
