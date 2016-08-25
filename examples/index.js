@@ -21,9 +21,9 @@ const HealthBar = ({percentHealth}) =>
   </__>
 
 const PokemonList = ({pokemon}) =>
-  <__ X wrap spaceBetween px2 tag='ul' maxWidth='380px'>
+  <__ row wrap spaceBetween px2 tag='ul' maxWidth='380px'>
     {pokemon.map(p =>
-      <__ Y y px1 my2 tag='li' >
+      <__ col cx px1 my2 tag='li' >
         <h2>cp { p.cp }</h2>
         <img src={ p.img } height='90px' />
         <__ tag='h4' mb1>{ p.name }</__>
