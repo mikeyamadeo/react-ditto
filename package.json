@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/mikeyamadeo/react-ditto#readme",
   "dependencies": {
+    "aphrodite": "0.5.0",
     "react": "15.1.0"
   },
   "devDependencies": {
