@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
-import { defineStyleApiComponent } from './StyleApi'
+import { defineStyleComponent } from './Style'
 import { defineSpaceApi } from './space'
-import { axisApi } from './axis'
+import { layoutApi } from './layout'
 
 const nonBooleanApiProps = [
   'width', 'maxWidth', 'minWidth',
@@ -15,12 +15,12 @@ export const cloneNewDitto = ({
     base: baseSpace
   })
 
-  const api = {...spaceApi, ...axisApi}
+  const api = {...spaceApi, ...layoutApi}
 
-  const StyleApi = defineStyleApiComponent(api)
+  const Style = defineStyleComponent(api)
 
   const Ditto = ({
-    X, Y, x, y,
+    row, col, cx, cy,
 
     style: authorStyles,
     children,
@@ -35,22 +35,22 @@ export const cloneNewDitto = ({
     let props = {...rest, style}
     let axisPropName = []
 
-    if (!X && !Y) {
-      return <StyleApi {...props}>{children}</StyleApi>
-    } else if (X && Y) {
-      console.warn('Both X & Y axis props found in Ditto. Giving X presidence.')
-    } else if (X) {
-      axisPropName.push('X')
-    } else if (Y) {
-      axisPropName.push('Y')
+    if (!row && !col) {
+      return <Style {...props}>{children}</Style>
+    } else if (row && col) {
+      console.warn('Both row & col axis props found in Ditto. Giving row presidence.')
+    } else if (row) {
+      axisPropName.push('row')
+    } else if (col) {
+      axisPropName.push('col')
     }
 
-    if (x) {
-      axisPropName.push('x')
+    if (cx) {
+      axisPropName.push('cx')
     }
 
-    if (y) {
-      axisPropName.push('y')
+    if (cy) {
+      axisPropName.push('cy')
     }
 
     const axisProp = axisPropName.join('')
@@ -59,7 +59,7 @@ export const cloneNewDitto = ({
       props[axisProp] = true
     }
 
-    return <StyleApi {...props} >{children}</StyleApi>
+    return <Style {...props} >{children}</Style>
   }
 
   Ditto.propTypes = {
