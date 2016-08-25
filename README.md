@@ -11,9 +11,9 @@ Transform layout to take whatever form you please without leaving the render met
 ```jsx
 import __ from 'react-ditto'
 
-// align psyducks along X axis
+// align psyducks in a row
 const Psyducks = () =>
-  <__ X>
+  <__ row>
     <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
@@ -22,9 +22,9 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-// align along x axis positioned across y axis
+// center the row of psyducks along the x axis
 const Psyducks = () =>
-  <__ X y>
+  <__ row cx>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
@@ -34,9 +34,9 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-// align along x axis position across both x & y axis
+// absolutely center the row of psyducks along both x & y axis
 const Psyducks = () =>
-  <__ X x y>
+  <__ row cx cy>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
@@ -46,9 +46,9 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-// align along x axis positioned across x axis placing space _between_ psyducks
+// center along y axis while placing space _between_ row of psyducks
 const Psyducks = () =>
-  <__ X x spaceBetween>
+  <__ row cy spaceBetween>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
@@ -57,9 +57,9 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-// align along x axis positioned across x axis placing space _around_ psyducks
+// center along y axis while placing space _around_ row of psyducks
 const Psyducks = () =>
-  <__ X x spaceAround>
+  <__ row cy spaceAround>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
@@ -68,9 +68,9 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-// align along y axis positioned across y axis placing space _around_ psyducks
+// render psyducks as a column (with space _around_) and center along the x axis
 const Psyducks = () =>
-  <__ Y y spaceAround>
+  <__ col cx spaceAround>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
@@ -79,9 +79,9 @@ const Psyducks = () =>
 ```jsx
 import __ from 'react-ditto'
 
-// align along y axis positioned across y axis placing space _around_ and wrapping as space requires
+// render psyducks in a column (with space _around_) and wrap as room requires
 const Psyducks = () =>
-  <__ Y y spaceAround wrap>
+  <__ col cx spaceAround wrap>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </__>
 ```
@@ -122,7 +122,7 @@ import __ from 'react-ditto'
 
 // apply padding along the 'y' axis
 const SnorlaxAndCandy = () =>
-  <__ X py3>
+  <__ row py3>
    <Snorlax />
    <Candy />
   </__>
@@ -154,9 +154,9 @@ const HealthBar = ({percentHealth}) =>
   </__>
 
 const PokemonList = ({pokemon}) =>
-  <__ X wrap spaceBetween px2 tag='ul' maxWidth='380px'>
+  <__ row wrap spaceBetween px2 tag='ul' maxWidth='380px'>
     {pokemon.map(p =>
-      <__ Y y px1 my2 tag='li' >
+      <__ col cx px1 my2 tag='li' >
         <h2>cp { p.cp }</h2>
         <img src={ p.img } height='90px' />
         <__ tag='h4' mb1>{ p.name }</__>
