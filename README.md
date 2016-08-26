@@ -2,7 +2,35 @@
 Transform layout to take whatever form you please without leaving the render method.
 
 3 apis:
-- layout
+
+| prop          | value         | result        |
+| ------------- |:-------------:|:-------------:|
+| row           | true          | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
+| col           | true          | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
+| x             | true          | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
+| x             | false          | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
+| x             | oneOf(['end']) | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
+| y             | true           | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
+| y             | false          | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
+| y             | oneOf(['end']) | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
+
+
+| col           | align children as column      |
+| x             | are neat      | 
+| cy            | |
+| spaceBetween  |
+| spaceAround   |
+| wrap          |
+| reverse       |
+| wrapReverse   |
+| alignEnd      |
+| alignStretch  |
+
+
+
+- 
+
+
 - spacing
 - sizing
 
