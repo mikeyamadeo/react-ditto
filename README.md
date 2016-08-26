@@ -1,36 +1,80 @@
 #react-ditto <img src='https://camo.githubusercontent.com/4dcd7c4c933192970a8d86a9fac6634725891915/687474703a2f2f706f6b656d6f6e6c6565646c652e776565626c792e636f6d2f75706c6f6164732f322f372f392f352f32373935323032372f333436353333395f6f7269672e676966' width='80px' />
 Transform layout to take whatever form you please without leaving the render method.
 
-3 apis:
+```js
+const spacingPropTypes = PropTypes.oneOf([
+  0, '0',       // none
+  '--',         // tiny
+  '-',          // small
+  true,         // standard
+  '+',          // big
+  '++'          // giant
+])
 
-| prop          | value         | result        |
-| ------------- |:-------------:|:-------------:|
-| row           | true          | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
-| col           | true          | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
-| x             | true          | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
-| x             | false          | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
-| x             | oneOf(['end']) | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
-| y             | true           | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
-| y             | false          | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
-| y             | oneOf(['end']) | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
+const axisPropTypes = PropTypes.oneOf([
+  false,        // (Default) place at "start" of given axis (far left [x] or top [y]) 
+  true,         // center across given axis
+  'end',        // place at "end" of given axis (far right [x] or bottom [y])
+  'stretch'     // stretch across given axis
+])
+
+const sizingPropTypes = PropTypes.string
+
+const api = {
+
+  // layout api
+  row: PropTypes.bool, // align children in a row (horizontal line)
+  col: PropTypes.bool, // align children in a column (vertical line)
+  x: axisPropTypes,
+  y: axisPropTypes,
+  space: PropTypes.oneOf([
+    'between',  // |x  x  x|
+    'around'    // | x x x |
+  ]),
+  wrap: ProptTypes.oneOf([
+    false,      // squish all chilrdren to fit space
+    true,       // overflow children underneath
+    'reverse'   // overflow children above
+  ]),
+  
+  // spacing api
+  p: spacingPropTypes,       // padding
+  pt: spacingPropTypes,      // padding top
+  pr: spacingPropTypes,      // padding right
+  pb: spacingPropTypes,      // padding bottom
+  pl: spacingPropTypes,      // padding left
+  px: spacingPropTypes,      // horizontal padding 
+  py: spacingPropTypes,      // vertical padding
+  
+  m: spacingPropTypes,       // margin
+  mt: spacingPropTypes,      // margin top
+  mr: spacingPropTypes,      // margin right
+  mb: spacingPropTypes,      // margin bottom
+  ml: spacingPropTypes,      // margin left
+  mx: spacingPropTypes,      // horizontal margin
+  my: spacingPropTypes,      // vertical margin
+  
+  // sizing api
+  size: sizingPropTypes,
+
+  height: sizingPropTypes,
+  maxHeight: sizingPropTypes,
+  minHeight: sizingPropTypes,
+
+  width: sizingPropTypes,
+  maxWidth: sizingPropTypes,
+  minWidth sizingPropTypes,
+  
+}
+
+```
 
 
-| col           | align children as column      |
-| x             | are neat      | 
-| cy            | |
-| spaceBetween  |
-| spaceAround   |
-| wrap          |
-| reverse       |
-| wrapReverse   |
-| alignEnd      |
-| alignStretch  |
+| prop          | result        |
+| ------------- |:-------------:|
+| row           | <img src='https://raw.githubusercontent.com/mikeyamadeo/react-ditto/master/assets/psyducks-in-a-row.jpg' width='200px' /> |
 
-
-
-- 
-
-
+- layout
 - spacing
 - sizing
 
