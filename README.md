@@ -12,7 +12,7 @@ const spacingPropTypes = PropTypes.oneOf([
 ])
 
 const axisPropTypes = PropTypes.oneOf([
-  false,        // (Default) place at "start" of given axis (far left [x] or top [y]) 
+  false,        // (Default) place at "start" of given axis (far left [x] or top [y])
   true,         // center across given axis
   'end',        // place at "end" of given axis (far right [x] or bottom [y])
   'stretch'     // stretch across given axis
@@ -23,8 +23,6 @@ const sizingPropTypes = PropTypes.string
 const api = {
 
   // layout api
-  row: PropTypes.bool, // align children in a row (horizontal line)
-  col: PropTypes.bool, // align children in a column (vertical line)
   x: axisPropTypes,
   y: axisPropTypes,
   space: PropTypes.oneOf([
@@ -36,16 +34,16 @@ const api = {
     true,       // overflow children underneath
     'reverse'   // overflow children above
   ]),
-  
+
   // spacing api
   p: spacingPropTypes,       // padding
   pt: spacingPropTypes,      // padding top
   pr: spacingPropTypes,      // padding right
   pb: spacingPropTypes,      // padding bottom
   pl: spacingPropTypes,      // padding left
-  px: spacingPropTypes,      // horizontal padding 
+  px: spacingPropTypes,      // horizontal padding
   py: spacingPropTypes,      // vertical padding
-  
+
   m: spacingPropTypes,       // margin
   mt: spacingPropTypes,      // margin top
   mr: spacingPropTypes,      // margin right
@@ -53,7 +51,7 @@ const api = {
   ml: spacingPropTypes,      // margin left
   mx: spacingPropTypes,      // horizontal margin
   my: spacingPropTypes,      // vertical margin
-  
+
   // sizing api
   size: sizingPropTypes,
 
@@ -64,7 +62,7 @@ const api = {
   width: sizingPropTypes,
   maxWidth: sizingPropTypes,
   minWidth sizingPropTypes,
-  
+
 }
 
 ```
@@ -236,6 +234,6 @@ const PokemonList = ({pokemon}) =>
       </__>
     )}
   </__>
-  
+
 render(<PokemonList pokemon={pokemon} />, document.getElementById('root'))
 ```
