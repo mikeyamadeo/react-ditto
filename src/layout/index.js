@@ -44,26 +44,6 @@ export const layoutApi = {
   }
 }
 
-// const ptVal = PropTypes.oneOf([0, '0', '--', '-', true, '+', '++'])
-//
-// axisPropTypes = {
-//   p: ptVal,
-//   pt: ptVal,
-//   pr: ptVal,
-//   pb: ptVal,
-//   pl: ptVal,
-//   px: ptVal,
-//   py: ptVal,
-//
-//   m: ptVal,
-//   mt: ptVal,
-//   mr: ptVal,
-//   mb: ptVal,
-//   ml: ptVal,
-//   mx: ptVal,
-//   my: ptVal
-// }
-
 const axisConfig = {
   row: {
     x: {
@@ -91,7 +71,7 @@ export const useColApi = useLayoutApi('col')
 export const useRowApi = useLayoutApi('row')
 
 /**
- * 2. When applying alignItems or JustifyContent properties we will give
+ * 1. When applying alignItems or JustifyContent properties we will give
  * preference to the spaceProp.
  */
 function useLayoutApi (type) {
@@ -125,7 +105,7 @@ function useLayoutApi (type) {
         [type]: true,
         [xAxisProp]: true,
         [yAxisProp]: true,
-        [spaceProp]: true, /* [2] */
+        [spaceProp]: true, /* [1] */
         [wrapProp]: true,
         [reverseProp]: true
       }} />

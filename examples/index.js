@@ -25,26 +25,27 @@ const PokemonList = ({pokemon}) =>
     {pokemon.map(p =>
       <Col x p='--' my='--' tag='li' id='bird'>
         <h2>cp { p.cp }</h2>
-        <img src={ p.img } height='90px' width='default'/>
+        <img src={ p.img } height='90px'/>
         <Box tag='h4' mb='--'>{ p.name }</Box>
         <HealthBar percentHealth={(p.health / p.maxHealth) * 100} />
       </Col>
     )}
   </Row>
 
-const Psyduck = () =>
+const Snorlax = () =>
   <img id='fox' src={require('../assets/snorlax-pokemon-go.png')} width='50px' />
 
-const Psyducks = () =>
-  <Col y='center' x='end' height='250px' >
-    <Psyduck />
-    <Psyduck />
-    <Psyduck />
-    <Psyduck />
+const Snorlaxs = () =>
+  <Col x space='around' height='250px' >
+    <Snorlax />
+    <Snorlax />
+    <Snorlax />
+    <Snorlax />
   </Col>
 
 render(
   <div>
+    <Snorlaxs />
     <PokemonList pokemon={pokemon} />
   </div>
   , document.querySelector('#example')

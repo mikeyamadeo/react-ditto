@@ -1,16 +1,7 @@
-import React from 'react'
-import { pick, pluck } from './utils'
 import { defineStyleComponent } from './Style'
 import { defineSpaceApi, useSpaceOperatorApi } from './space'
 import { layoutApi, useColApi, useRowApi } from './layout'
-
-const sizing = [
-  'width', 'maxWidth', 'minWidth',
-  'height', 'maxHeight', 'minHeight'
-]
-
-const useSizeApi = Component => ({style, ...props}) =>
-  <Component {...pluck(sizing, props)} style={{...style, ...pick(sizing, props)}} />
+import { useSizeApi } from './size'
 
 export const cloneNewDitto = ({
   baseSpace
@@ -33,5 +24,3 @@ const Ditto = cloneNewDitto()
 export const Box = Ditto.Box
 export const Row = Ditto.Row
 export const Col = Ditto.Col
-
-// export default cloneNewDitto()
