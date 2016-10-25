@@ -1,6 +1,6 @@
 {
   "name": "mikeyamadeo",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Component based layout and spacing utilities for rendering UI with react",
   "main": "dist/index.js",
   "scripts": {
