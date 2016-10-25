@@ -1,5 +1,3 @@
-// import { css } from 'aphrodite'
-
 export const pick = (keys, map) => {
   let newObj = {}
 
@@ -18,25 +16,9 @@ export const pluck = (keys, map) => {
   return newObj
 }
 
-export const separate = (keys, map) => {
-  let picked = {}
-  let plucked = {}
-
-  keys.forEach((key) => {
-    const value = map[key]
-
-    if (typeof value !== 'undefined') {
-      picked[key] = value
-    } else {
-      plucked[key] = value
-    }
-  })
-
-  return {
-    picked,
-    plucked
-  }
-}
+export const capitalize = string => string.split(' ').map(str =>
+  str.charAt(0).toUpperCase() + str.slice(1)
+).join(' ')
 
 export const flatten = (collection) =>
   collection.reduce((prev, next) => ({

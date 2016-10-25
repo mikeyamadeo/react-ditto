@@ -1,5 +1,28 @@
 import test from 'ava'
-import { createPropValues } from './logic'
+import { flattenOperatorApi, createPropValues } from './logic'
+
+test('correctly flattens operator api to boolean api', async t => {
+  const expectedBooleanPropValues = {
+    p0: true,
+    pt1: true,
+    pr2: true,
+    pb3: true,
+    pl4: true,
+    px5: true
+  }
+
+  const booleanPropValues = flattenOperatorApi({
+    p: 0,
+    pt: '--',
+    pr: '-',
+    pb: true,
+    pl: '+',
+    px: '++'
+  })
+
+  t.deepEqual(booleanPropValues, expectedBooleanPropValues)
+  t.pass()
+})
 
 test('createPropValues', async t => {
   const propValues = createPropValues()

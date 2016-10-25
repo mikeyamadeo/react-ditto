@@ -19,7 +19,7 @@ module.exports = {
         loaders: ['babel-loader']
       },
       {
-        test: /\.png/,
+        test: /\.png|svg/,
         loader: 'url-loader?limit=10000&mimetype=image/png'
       },
       {

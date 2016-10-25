@@ -14,8 +14,7 @@ const spacingPropTypes = PropTypes.oneOf([
 const axisPropTypes = PropTypes.oneOf([
   false,        // (Default) place at "start" of given axis (far left [x] or top [y])
   true,         // center across given axis
-  'end',        // place at "end" of given axis (far right [x] or bottom [y])
-  'stretch'     // stretch across given axis
+  'end'        // place at "end" of given axis (far right [x] or bottom [y])
 ])
 
 const sizingPropTypes = PropTypes.string
@@ -34,6 +33,10 @@ const api = {
     true,       // overflow children underneath
     'reverse'   // overflow children above
   ]),
+  reverse: PropTypes.onOf({
+    true,
+    false
+  })
 
   // spacing api
   p: spacingPropTypes,       // padding

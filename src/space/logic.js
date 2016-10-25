@@ -1,5 +1,5 @@
 import { pxToEm } from './utils'
-import defaultConfig from './config'
+import defaultConfig, { spaceApiPropNames } from './config'
 const { keys } = Object
 
 const sizeModifierFactory = ({
@@ -68,3 +68,31 @@ export const createPropValues = ({
 
   return propValues
 }
+
+export const flattenOperatorApi = (props) =>
+  spaceApiPropNames.reduce((flatApi, propName) => {
+    const value = props[propName]
+    if (typeof value !== 'undefined') {
+      switch (String(value)) {
+        case '0':
+          flatApi[`${propName}0`] = true
+          break
+        case '--':
+          flatApi[`${propName}1`] = true
+          break
+        case '-':
+          flatApi[`${propName}2`] = true
+          break
+        case 'true':
+          flatApi[`${propName}3`] = true
+          break
+        case '+':
+          flatApi[`${propName}4`] = true
+          break
+        case '++':
+          flatApi[`${propName}5`] = true
+          break
+      }
+    }
+    return flatApi
+  }, {})

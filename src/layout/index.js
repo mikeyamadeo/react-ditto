@@ -1,22 +1,34 @@
+import React from 'react'
+import { capitalize } from '../utils'
+
 const flex = { display: 'flex' }
 const row = flex
 const col = { ...flex, flexDirection: 'column' }
-const rowcx = { ...flex, justifyContent: 'center' }
-const rowcy = { ...flex, alignItems: 'center' }
-const colcx = { ...col, alignItems: 'center' }
-const colcy = { ...col, justifyContent: 'center' }
 
 export const layoutApi = {
   row,
   col,
-  rowcx,
-  rowcy,
-  colcx,
-  colcy,
-  rowcxcy: { ...rowcx, ...rowcy },
-  colcxcy: { ...colcx, ...colcy },
+  rowx: { justifyContent: 'center' },
+  rowy: { alignItems: 'center' },
+  colx: { alignItems: 'center' },
+  coly: { justifyContent: 'center' },
+  rowxEnd: {
+    justifyContent: 'flex-end'
+  },
+  colxEnd: {
+    alignItems: 'flex-end'
+  },
+  rowyEnd: {
+    alignItems: 'flex-end'
+  },
+  colyEnd: {
+    justifyContent: 'flex-end'
+  },
   reverse: {
     flexDirection: 'row-reverse'
+  },
+  columnReverse: {
+    flexDirection: 'column-reverse'
   },
   wrap: {
     flexWrap: 'wrap'
@@ -24,19 +36,101 @@ export const layoutApi = {
   wrapReverse: {
     flexWrap: 'wrap-reverse'
   },
-  alignEnd: {
-    alignItems: 'flex-end'
-  },
-  alignStretch: {
-    alignItems: 'stretch'
-  },
-  justifyEnd: {
-    justifyContent: 'flex-end'
-  },
   spaceBetween: {
     justifyContent: 'space-between'
   },
   spaceAround: {
     justifyContent: 'space-around'
+  }
+}
+
+// const ptVal = PropTypes.oneOf([0, '0', '--', '-', true, '+', '++'])
+//
+// axisPropTypes = {
+//   p: ptVal,
+//   pt: ptVal,
+//   pr: ptVal,
+//   pb: ptVal,
+//   pl: ptVal,
+//   px: ptVal,
+//   py: ptVal,
+//
+//   m: ptVal,
+//   mt: ptVal,
+//   mr: ptVal,
+//   mb: ptVal,
+//   ml: ptVal,
+//   mx: ptVal,
+//   my: ptVal
+// }
+
+const axisConfig = {
+  row: {
+    x: {
+      true: 'rowx',
+      end: 'rowxEnd'
+    },
+    y: {
+      true: 'rowy',
+      end: 'rowyEnd'
+    }
+  },
+  col: {
+    x: {
+      true: 'colx',
+      end: 'colxEnd'
+    },
+    y: {
+      true: 'coly',
+      end: 'colyEnd'
+    }
+  }
+}
+
+export const useColApi = useLayoutApi('col')
+export const useRowApi = useLayoutApi('row')
+
+/**
+ * 2. When applying alignItems or JustifyContent properties we will give
+ * preference to the spaceProp.
+ */
+function useLayoutApi (type) {
+  let axisPropConfig = axisConfig[type]
+  return (Style) => {
+    const LayoutApi = ({x, y, space, wrap, reverse, ...props}) => {
+      let xAxisProp = axisPropConfig.x[x]
+      let yAxisProp = axisPropConfig.y[y]
+      let spaceProp = false
+      let wrapProp = false
+      let reverseProp = false
+
+      if (space) {
+        spaceProp = `space${capitalize(space)}`
+      }
+
+      if (wrap === true) {
+        wrapProp = 'wrap'
+      } else if (wrap === 'reverse') {
+        wrapProp = 'wrapReverse'
+      }
+
+      if (reverse) {
+        reverseProp = type === 'row'
+          ? 'row-reverse'
+          : 'columne-reverse'
+      }
+
+      return <Style {...{
+        ...props,
+        [type]: true,
+        [xAxisProp]: true,
+        [yAxisProp]: true,
+        [spaceProp]: true, /* [2] */
+        [wrapProp]: true,
+        [reverseProp]: true
+      }} />
+    }
+
+    return LayoutApi
   }
 }

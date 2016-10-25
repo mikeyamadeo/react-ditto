@@ -1,12 +1,16 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import { pick, pluck } from './utils'
 import { defineStyleComponent } from './Style'
-import { defineSpaceApi } from './space'
-import { layoutApi } from './layout'
+import { defineSpaceApi, useSpaceOperatorApi } from './space'
+import { layoutApi, useColApi, useRowApi } from './layout'
 
-const nonBooleanApiProps = [
+const sizing = [
   'width', 'maxWidth', 'minWidth',
   'height', 'maxHeight', 'minHeight'
 ]
+
+const useSizeApi = Component => ({style, ...props}) =>
+  <Component {...pluck(sizing, props)} style={{...style, ...pick(sizing, props)}} />
 
 export const cloneNewDitto = ({
   baseSpace
@@ -15,58 +19,19 @@ export const cloneNewDitto = ({
     base: baseSpace
   })
 
-  const api = {...spaceApi, ...layoutApi}
+  const Style = defineStyleComponent({...spaceApi, ...layoutApi})
 
-  const Style = defineStyleComponent(api)
-
-  const Ditto = ({
-    row, col, cx, cy,
-
-    style: authorStyles,
-    children,
-    ...rest
-  }) => {
-    const style = nonBooleanApiProps.reduce((styles, prop) => {
-      if (rest.hasOwnProperty(prop)) {
-        styles[prop] = rest[prop]
-      }
-      return styles
-    }, { ...authorStyles })
-    let props = {...rest, style}
-    let axisPropName = []
-
-    if (!row && !col) {
-      return <Style {...props}>{children}</Style>
-    } else if (row && col) {
-      console.warn('Both row & col axis props found in Ditto. Giving row presidence.')
-    } else if (row) {
-      axisPropName.push('row')
-    } else if (col) {
-      axisPropName.push('col')
-    }
-
-    if (cx) {
-      axisPropName.push('cx')
-    }
-
-    if (cy) {
-      axisPropName.push('cy')
-    }
-
-    const axisProp = axisPropName.join('')
-
-    if (axisPropName) {
-      props[axisProp] = true
-    }
-
-    return <Style {...props} >{children}</Style>
+  return {
+    Col: useSizeApi(useSpaceOperatorApi(useColApi(Style))),
+    Row: useSizeApi(useSpaceOperatorApi(useRowApi(Style))),
+    Box: useSizeApi(useSpaceOperatorApi(defineStyleComponent(spaceApi)))
   }
-
-  Ditto.propTypes = {
-    tag: PropTypes.string
-  }
-
-  return Ditto
 }
 
-export default cloneNewDitto()
+const Ditto = cloneNewDitto()
+
+export const Box = Ditto.Box
+export const Row = Ditto.Row
+export const Col = Ditto.Col
+
+// export default cloneNewDitto()
