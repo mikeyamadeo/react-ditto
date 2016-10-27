@@ -1,11 +1,12 @@
 {
-  "name": "mikeyamadeo",
+  "name": "react-ditto",
   "version": "1.0.0",
   "description": "Component based layout and spacing utilities for rendering UI with react",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel --copy-files --out-dir dist src",
-    "prebuild": "rimraf dist",
+    "prepublish": "npm run build",
+    "prebuild": "rm -rf dist && mkdir dist",
     "test": "ava -w",
     "examples": "webpack-dev-server --inline --content-base examples"
   },
