@@ -208,6 +208,29 @@ test.serial('Box, Row, Col: sizing api applies styles as expected', async t => {
   })
 })
 
+test.serial('Row, Col: reverse works', async t => {
+  render(
+    <div>
+      <Row id='row' reverse>Hi</Row>
+      <Col id='col' reverse>Hi</Col>
+    </div>
+    , document.getElementById('root')
+  )
+
+  asap(() => {
+    applyAphroditeWorkaround(document)
+    let el = document.getElementById('row')
+    let appliedStyles = window.getComputedStyle(el)
+    t.is(appliedStyles.flexDirection, 'row-reverse')
+
+    el = document.getElementById('col')
+    appliedStyles = window.getComputedStyle(el)
+    t.is(appliedStyles.flexDirection, 'column-reverse')
+
+    t.pass()
+  })
+})
+
 function logDom (document) {
   console.log(document.documentElement.outerHTML
     .split('<').join('\n<')

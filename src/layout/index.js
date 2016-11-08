@@ -1,5 +1,5 @@
 import React from 'react'
-import { capitalize } from '../utils'
+import { pluck, capitalize } from '../utils'
 
 const flex = { display: 'flex' }
 const row = flex
@@ -72,43 +72,50 @@ export const useRowApi = useLayoutApi('row')
 
 /**
  * 1. When applying alignItems or JustifyContent properties we will give
- * preference to the spaceProp.
+ * preference to the spaceProp by placing it last.
  */
-function useLayoutApi (type) {
-  let axisPropConfig = axisConfig[type]
-  return (Style) => {
-    const LayoutApi = ({x, y, space, wrap, reverse, ...props}) => {
-      let xAxisProp = axisPropConfig.x[x]
-      let yAxisProp = axisPropConfig.y[y]
-      let spaceProp = false
-      let wrapProp = false
-      let reverseProp = false
-
-      if (space) {
-        spaceProp = `space${capitalize(space)}`
-      }
-
+function propAdaptors (type) {
+  return [
+    ({x}) => axisConfig[type].x[x],
+    ({y}) => axisConfig[type].y[y],
+    ({wrap}) => {
       if (wrap === true) {
-        wrapProp = 'wrap'
+        return 'wrap'
       } else if (wrap === 'reverse') {
-        wrapProp = 'wrapReverse'
+        return 'wrapReverse'
+      } else {
+        return false
       }
+    },
+    ({reverse}) => {
+      if (!reverse) {
+        return false
+      } else if (type === 'row') {
+        return 'reverse'
+      } else {
+        return 'columnReverse'
+      }
+    },
+    ({space}) => space ? `space${capitalize(space)}` : false /* [1] */
+  ]
+}
 
-      if (reverse) {
-        reverseProp = type === 'row'
-          ? 'row-reverse'
-          : 'columne-reverse'
-      }
+function useLayoutApi (type) {
+  const adaptors = propAdaptors(type)
+  return (Style) => {
+    const LayoutApi = (props) => {
+      let adaptedProps = { [type]: true }
+      adaptors.forEach((adaptor) => {
+        const value = adaptor(props)
+        if (value) {
+          adaptedProps[value] = true
+        }
+      })
 
       return <Style {...{
-        ...props,
-        [type]: true,
-        [xAxisProp]: true,
-        [yAxisProp]: true,
-        [spaceProp]: true, /* [1] */
-        [wrapProp]: true,
-        [reverseProp]: true
-      }} />
+        ...pluck(['x', 'y', 'reverse', 'wrap', 'space'], props),
+        ...adaptedProps}}
+      />
     }
 
     return LayoutApi
