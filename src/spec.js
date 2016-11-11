@@ -231,6 +231,24 @@ test.serial('Row, Col: reverse works', async t => {
   })
 })
 
+test.serial('Box, Row, Col: className styles get included', async t => {
+  render(
+    <div>
+      <Row id='row' className='horse'>Hi</Row>
+    </div>
+    , document.getElementById('root')
+  )
+
+  asap(() => {
+    applyAphroditeWorkaround(document)
+    let el = document.getElementById('row')
+    console.log(el.className)
+    t.not(el.className.indexOf('horse'), -1)
+
+    t.pass()
+  })
+})
+
 function logDom (document) {
   console.log(document.documentElement.outerHTML
     .split('<').join('\n<')

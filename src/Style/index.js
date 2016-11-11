@@ -38,6 +38,7 @@ export const defineStyleComponent = (api) => {
     tag,
     style: stylesFromAuthor,
     children,
+    className,
     ...rest
   }) => {
     const Tag = tag || 'div'
@@ -54,7 +55,10 @@ export const defineStyleComponent = (api) => {
       : activeStaticStyles
 
     return (
-      <Tag { ...{ ...props, className: css.apply(null, styleSheet) } }>
+      <Tag { ...{
+        ...props,
+        className: `${css.apply(null, styleSheet)} ${className}`
+      } }>
         {children}
       </Tag>
     )
