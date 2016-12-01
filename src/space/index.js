@@ -12,7 +12,7 @@ export const defineSpaceApi = createPropValues
 
 export default createPropValues({base: 6})
 
-const ptVal = PropTypes.oneOf([0, '0', '--', '-', true, '+', '++'])
+const ptVal = PropTypes.oneOf([0, '0', '--', '-', true, false, '+', '++'])
 
 export const useSpaceOperatorApi = (Component) => {
   const OperatorApi = (props) =>
