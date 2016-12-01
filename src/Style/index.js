@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 import { StyleSheet, css } from 'aphrodite'
-import { pluck } from '../utils'
 const { keys } = Object
 
 const separateStylePropsFromRest = (stylePropMap, map) => {
@@ -57,7 +56,7 @@ export const defineStyleComponent = (api) => {
       : activeStaticStyles
 
     let tagProps = {
-      ...pluck(possiblePropNames, props),
+      ...props,
       className: `${css.apply(null, styleSheet)} ${className || ''}`
     }
 

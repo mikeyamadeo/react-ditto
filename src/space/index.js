@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react'
+import { pluck } from '../utils'
+import { spaceApiPropNames } from './config'
 import { createPropValues, flattenOperatorApi } from './logic'
 
 // options:
@@ -14,7 +16,7 @@ const ptVal = PropTypes.oneOf([0, '0', '--', '-', true, '+', '++'])
 
 export const useSpaceOperatorApi = (Component) => {
   const OperatorApi = (props) =>
-    <Component {...props} {...flattenOperatorApi(props)} />
+    <Component {...pluck(spaceApiPropNames, props)} {...flattenOperatorApi(props)} />
 
   OperatorApi.propTypes = {
     p: ptVal,
