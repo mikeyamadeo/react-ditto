@@ -2,23 +2,38 @@ import React from 'react'
 import {render} from 'react-dom'
 import { Box, Row, Col } from '../src'
 import { pokemon } from './data'
-console.log(Box, Row, Col)
+
 const colors = {
   red: '#d34f4f',
   yellow: '#f4d554',
   green: '#6deeb6'
 }
 
-const HealthBar = ({percentHealth}) =>
-  <Box width='100%' height='6px'>
-    <Box width={`${percentHealth}%`} height='100%'
-      style={{backgroundColor: percentHealth < 25
-        ? colors.red
-        : percentHealth < 50
-        ? colors.yellow
-        : colors.green
-      }} />
-  </Box>
+const HealthBar = React.createClass({
+  propTypes: {
+    percentHealth: React.PropTypes.number
+  },
+
+  testRef (node) {
+    console.log(node)
+  },
+
+  render () {
+    const {percentHealth} = this.props
+
+    return (
+      <Box width='100%' height='6px'>
+        <Box width={`${percentHealth}%`} height='100%' baseRef={this.testRef}
+          style={{backgroundColor: percentHealth < 25
+            ? colors.red
+            : percentHealth < 50
+            ? colors.yellow
+            : colors.green
+          }} />
+      </Box>
+    )
+  }
+})
 
 const PokemonList = ({pokemon}) =>
   <Row wrap spaceBetween p tag='ul' maxWidth='380px' id='train'>

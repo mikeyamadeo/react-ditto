@@ -114,8 +114,8 @@ function useLayoutApi (type) {
 
       return <Style {...{
         ...pluck(['x', 'y', 'reverse', 'wrap', 'space'], props),
-        ...adaptedProps}}
-      />
+        ...adaptedProps
+      }}/>
     }
 
     return LayoutApi

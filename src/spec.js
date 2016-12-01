@@ -5,6 +5,22 @@ import asap from 'asap'
 import {Box, Row, Col} from './index.js'
 import {pxToEm} from './space/utils'
 
+test.serial('undefined class does not get applied', async t => {
+  render(
+    <div>
+      <Box id='box' maxHeight='144px' minHeight='20px' py mr ml>Hi</Box>
+    </div>
+    , document.getElementById('root')
+  )
+
+  asap(() => {
+    applyAphroditeWorkaround(document)
+    let el = document.getElementById('box')
+    t.is(el.className.indexOf('undefined'), -1)
+    t.pass()
+  })
+})
+
 test.serial('Ditto: spacing api applies styles as expected for Box, Row, and Col', async t => {
   render(
     <div>
@@ -234,15 +250,20 @@ test.serial('Row, Col: reverse works', async t => {
 test.serial('Box, Row, Col: className styles get included', async t => {
   render(
     <div>
+      <Box id='box' className='horse'>Hi</Box>
       <Row id='row' className='horse'>Hi</Row>
+      <Col id='col' className='horse'>Hi</Col>
     </div>
     , document.getElementById('root')
   )
 
   asap(() => {
     applyAphroditeWorkaround(document)
-    let el = document.getElementById('row')
-    console.log(el.className)
+    let el = document.getElementById('box')
+    t.not(el.className.indexOf('horse'), -1)
+    el = document.getElementById('row')
+    t.not(el.className.indexOf('horse'), -1)
+    el = document.getElementById('col')
     t.not(el.className.indexOf('horse'), -1)
 
     t.pass()

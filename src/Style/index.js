@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { StyleSheet, css } from 'aphrodite'
+import { pluck } from '../utils'
 const { keys } = Object
 
 const separateStylePropsFromRest = (stylePropMap, map) => {
@@ -39,6 +40,7 @@ export const defineStyleComponent = (api) => {
     style: stylesFromAuthor,
     children,
     className,
+    baseRef,
     ...rest
   }) => {
     const Tag = tag || 'div'
@@ -54,11 +56,17 @@ export const defineStyleComponent = (api) => {
       ? [...activeStaticStyles, dynamicStyles]
       : activeStaticStyles
 
+    let tagProps = {
+      ...pluck(possiblePropNames, props),
+      className: `${css.apply(null, styleSheet)} ${className || ''}`
+    }
+
+    if (baseRef) {
+      tagProps.ref = baseRef
+    }
+
     return (
-      <Tag { ...{
-        ...props,
-        className: `${css.apply(null, styleSheet)} ${className}`
-      } }>
+      <Tag { ...tagProps}>
         {children}
       </Tag>
     )
