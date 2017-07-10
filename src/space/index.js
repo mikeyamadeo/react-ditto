@@ -1,22 +1,26 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { pluck } from '../utils'
 import { spaceApiPropNames } from './config'
 import { createPropValues, flattenOperatorApi } from './logic'
 
 // options:
-  // scale ['fibonacci', 'linear']
-  // base {Number}
-  // scaleModifiers
-
+// scale ['fibonacci', 'linear']
+// base {Number}
+// scaleModifiers
 export const defineSpaceApi = createPropValues
 
-export default createPropValues({base: 6})
+export default createPropValues({ base: 6 })
 
-const ptVal = PropTypes.oneOf([0, '0', '--', '-', true, false, '+', '++'])
+const ptVal = PropTypes.oneOf([ 0, '0', '--', '-', true, false, '+', '++' ])
 
-export const useSpaceOperatorApi = (Component) => {
-  const OperatorApi = (props) =>
-    <Component {...pluck(spaceApiPropNames, props)} {...flattenOperatorApi(props)} />
+export const useSpaceOperatorApi = Component => {
+  const OperatorApi = props => (
+    <Component
+      {...pluck(spaceApiPropNames, props)}
+      {...flattenOperatorApi(props)}
+    />
+  )
 
   OperatorApi.propTypes = {
     p: ptVal,
@@ -26,7 +30,6 @@ export const useSpaceOperatorApi = (Component) => {
     pl: ptVal,
     px: ptVal,
     py: ptVal,
-
     m: ptVal,
     mt: ptVal,
     mr: ptVal,

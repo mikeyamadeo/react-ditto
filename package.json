@@ -28,6 +28,8 @@
   "homepage": "https://github.com/mikeyamadeo/react-ditto#readme",
   "dependencies": {
     "glamor": "^2.20.25",
+    "glamorous": "^3.23.5",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1"
   },
   "devDependencies": {

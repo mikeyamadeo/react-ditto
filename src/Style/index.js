@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react'
-// import { StyleSheet, css } from 'aphrodite'
+import React from 'react'
+import PropTypes from 'prop-types'
+import glamorous from 'glamorous'
 import { css } from 'glamor'
 const { keys } = Object
 
@@ -20,7 +21,8 @@ const separateStylePropsFromRest = (stylePropMap, map) => {
 }
 
 const extractActiveStyleKeys = props => keys(props).filter(key => props[key])
-
+const capitalize = string =>
+  string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
 /**
  * 1. Extract props specified in api from all other props
  * 2. Keep only the style props that are truthy
@@ -39,7 +41,7 @@ export const defineStyleComponent = api => {
   const Style = (
     { tag, style: stylesFromAuthor, children, className, baseRef, ...rest }
   ) => {
-    const Tag = tag || 'div'
+    const Tag = glamorous[capitalize(tag || 'div')]
     const { styleProps, props } = separateStylePropsFromRest(api, rest)
       /* [1] */
     const activeStyleKeys = extractActiveStyleKeys(styleProps)
