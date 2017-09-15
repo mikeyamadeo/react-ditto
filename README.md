@@ -5,7 +5,7 @@ Transform layout to take whatever form you please without leaving the render met
 
 ### Why I Exist
 
-**Layout is it's own beast**: When it comes to styling, the thought process around how approaching layout is a different one from adding stylistic elements like colors, font, animations, etc. Having a set a primitives around this can allows this thought process to do it's thing.
+**Layout is it's own beast**: When it comes to styling, the thought process around approaching layout is a different one from adding stylistic elements like colors, font, animations, etc. Having a set a primitives around this can allow this thought process to do it's thing.
 
 **Constraints ftw**: `react-ditto` has contraints (like spacing values) built into it that help enforce design consistency. Instead of eyeball guessing how much padding is in a design and littering the codebase with differing `px` and `em` values, trust the constraints do the work in order to free your brain and ensure visual consistency.
 
