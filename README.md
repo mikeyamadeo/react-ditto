@@ -282,6 +282,10 @@ import { cloneNewDitto } from 'react-ditto'
 const Layout = cloneNewDitto({
   baseSpace: 8
 })
+
+export const Box = Layout.Box
+export const Row = Layout.Row
+export const Col = Layout.Col
 ```
 
 resulting in the following spacing values:
