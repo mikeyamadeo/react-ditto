@@ -183,7 +183,7 @@ import { Row } from 'react-ditto'
 
 const DittoAndGlamorous = () => 
   <Box x y pt height='50em' color='blue' css={{':hover': { color: 'green' }}>
-    I'm absolutely centered with top padding. Green when hovered over, and blue when not.
+    I am absolutely centered with top padding. Green when hovered over, and blue when not.
   </Box>
 ```
 
