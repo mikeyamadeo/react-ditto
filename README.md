@@ -3,6 +3,14 @@
 <img src='https://camo.githubusercontent.com/4dcd7c4c933192970a8d86a9fac6634725891915/687474703a2f2f706f6b656d6f6e6c6565646c652e776565626c792e636f6d2f75706c6f6164732f322f372f392f352f32373935323032372f333436353333395f6f7269672e676966' width='80px' />
 Transform layout to take whatever form you please without leaving the render method.
 
+### Why I Exist
+
+**Layout is it's own beast**: When it comes to styling, the thought process around how approaching layout is a different one from adding stylistic elements like colors, font, animations, etc. Having a set a primitives around this can allows this thought process to do it's thing.
+
+**Constraints ftw**: `react-ditto` has contraints (like spacing values) built into it that help enforce design consistency. Instead of eyeball guessing how much padding is in a design and littering the codebase with differing `px` and `em` values, let the constraints do the work in order to free your brain and ensure visual consistency.
+
+**Never leave the render method**: one reason css-in-js is great because you don't have to context switch between your component file and stylesheet. But aren't we still context switching as we scroll between styles and the render method even if it's in the same file? `react-ditto` enables the reader to know what the component looks like and the writer to make changes without leaving the render method.
+
 ## Quick L👀ks
 ### Example set 1: Intro to layout or "axis" api by getting our Psyducks in a row
 ```jsx
@@ -78,7 +86,7 @@ import { Col } from 'react-ditto'
 
 // render psyducks in a column (with space _around_) and wrap as room requires
 const Psyducks = () =>
-  <Col space='around wrap>
+  <Col space='around' wrap>
    <Psyduck /> <Psyduck /> <Psyduck /> <Psyduck />
   </Col>
 ```
@@ -127,7 +135,7 @@ const SnorlaxAndCandy = () =>
 
 This shorthand works for both margin and padding.
 
-###Example set 3: Putting it all together
+### Example set 3: Putting it all together
 
 Let's say we want to render our pokemon go team:
 
@@ -173,27 +181,13 @@ So in addition to react-ditto's layout shorthand... you can use glamorous goodne
 ```js
 import { Row } from 'react-ditto'
 
-const DittoAndGlamorous = <Box x y pt color='blue' css={{':hover': { color: 'green' }} />
+const DittoAndGlamorous = () => 
+  <Box x y pt height='50em' color='blue' css={{':hover': { color: 'green' }}>
+    I'm absolutely centered with top padding. Green when hovered over, and blue when not.
+  </Box>
 ```
 
 ```js
-const spacingPropTypes = PropTypes.oneOf([
-  0, '0',       // none
-  '--',         // tiny
-  '-',          // small
-  true,         // standard
-  '+',          // big
-  '++'          // giant
-])
-
-const axisPropTypes = PropTypes.oneOf([
-  false,        // (Default) place at "start" of given axis (far left [x] or top [y])
-  true,         // center across given axis
-  'end'        // place at "end" of given axis (far right [x] or bottom [y])
-])
-
-const sizingPropTypes = PropTypes.string
-
 const api = {
 
   // layout api
@@ -245,5 +239,23 @@ const api = {
   minWidth sizingPropTypes,
 
 }
+
+const spacingPropTypes = PropTypes.oneOf([
+  0, '0',       // none
+  '--',         // tiny
+  '-',          // small
+  true,         // standard
+  '+',          // big
+  '++'          // giant
+])
+
+const axisPropTypes = PropTypes.oneOf([
+  false,        // (Default) place at "start" of given axis (far left [x] or top [y])
+  true,         // center across given axis
+  'end'        // place at "end" of given axis (far right [x] or bottom [y])
+])
+
+const sizingPropTypes = PropTypes.string
+
 
 ```
