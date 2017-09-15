@@ -7,7 +7,7 @@ Transform layout to take whatever form you please without leaving the render met
 
 **Layout is it's own beast**: When it comes to styling, the thought process around how approaching layout is a different one from adding stylistic elements like colors, font, animations, etc. Having a set a primitives around this can allows this thought process to do it's thing.
 
-**Constraints ftw**: `react-ditto` has contraints (like spacing values) built into it that help enforce design consistency. Instead of eyeball guessing how much padding is in a design and littering the codebase with differing `px` and `em` values, let the constraints do the work in order to free your brain and ensure visual consistency.
+**Constraints ftw**: `react-ditto` has contraints (like spacing values) built into it that help enforce design consistency. Instead of eyeball guessing how much padding is in a design and littering the codebase with differing `px` and `em` values, trust the constraints do the work in order to free your brain and ensure visual consistency.
 
 **Never leave the render method**: one reason css-in-js is great because you don't have to context switch between your component file and stylesheet. But aren't we still context switching as we scroll between styles and the render method even if it's in the same file? `react-ditto` enables the reader to know what the component looks like and the writer to make changes without leaving the render method.
 
@@ -259,3 +259,40 @@ const sizingPropTypes = PropTypes.string
 
 
 ```
+
+
+## Configuration
+By default `react-ditto` has a base space value of `6px` and the scale is based on fibonacci resulting in:
+```js
+{
+  '--': '6px',
+  '-': '12px',
+  '': '18px',
+  '+': '30px',
+  '++': '48px'
+}
+```
+
+You can configure your own thusly:
+```js
+// Layout.js
+
+import { cloneNewDitto } from 'react-ditto'
+
+const Layout = cloneNewDitto({
+  baseSpace: 8
+})
+```
+
+resulting in the following spacing values:
+```js
+{
+  '--': '8px',
+  '-': '16px',
+  '': '24px',
+  '+': '40px',
+  '++': '64px'
+}
+```
+
+If you're looking for further configuration (ex: don't like the `-`, `--`, `+`, `++` api for spacing?), open an issue and we'll see about getting you taken care of.
