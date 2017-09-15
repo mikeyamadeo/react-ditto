@@ -7,7 +7,7 @@ Transform layout to take whatever form you please without leaving the render met
 
 **Layout is it's own beast**: When it comes to styling, the thought process around approaching layout is a different one from adding stylistic elements like colors, font, animations, etc. Having a set a primitives around this can allow this thought process to do it's thing.
 
-**Constraints ftw**: `react-ditto` has contraints (like spacing values) built into it that help enforce design consistency. Instead of eyeball guessing how much padding is in a design and littering the codebase with differing `px` and `em` values, trust the constraints do the work in order to free your brain and ensure visual consistency.
+**Constraints ftw**: `react-ditto` has contraints (like spacing values) built into it that help enforce design consistency. Instead of eyeball guessing how much padding is in a design and littering the codebase with differing `px` and `em` values, trust the constraints to do the work in order to free your brain and ensure visual consistency.
 
 **Never leave the render method**: one reason css-in-js is great because you don't have to context switch between your component file and stylesheet. But aren't we still context switching as we scroll between styles and the render method even if it's in the same file? `react-ditto` enables the reader to know what the component looks like and the writer to make changes without leaving the render method.
 
